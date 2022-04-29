@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block head %}
+    {{ super() }}
+{% endblock head %}
+{% block body %}
+    <div>
+        <script type="text/javascript">
+            {% if p_message%}
+
+                part('{{ p_message }}')
+
+            {% endif %}
+
+            {% if v_message%}
+
+                vendor('{{ v_message }}')
+
+            {% endif %}
+        </script>
+    </div>
+
+{% endblock body %}

@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% block body %}
+    <div>
+        <table>
+            <tr>
+                <th>PART ID</th>
+                <th>PART NAME</th>
+            </tr>
+            {% for rows in prows %}
+                <tr>
+                    <td>{{ rows[0] }}</td>
+                    <td>{{ rows[1] }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div><br><br>
+
+
+    <B>VENDORS</B>
+
+    <div>
+        <form action="" method="post">
+
+            <table>
+                <tr>
+                    <th></th>
+                    <th>VENDOR ID</th>
+                    <th>VENDOR NAME</th>
+                </tr>
+
+                {% for rows in vrows %}
+                    <tr>
+                        <td><input type="checkbox" id="{{ rows[0] }}" name="vendors" value="{{ rows[0] }}"></td>
+                        <td>{{ rows[0] }}</td>
+                        <td>{{ rows[1] }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+{% endblock body %}

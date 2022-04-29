@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <div>
+        <input type="text" id="myInput" onkeyup="search()" placeholder="Search for part name..">
+    </div><br>
+    <div>
+        <table id="myTable">
+            <tr>
+                <th>PART ID</th>
+                <th>PART NAME</th>
+            </tr>
+            {% for rows in rows %}
+                <tr>
+                    <td>{{ rows[0] }}</td>
+                    <td>{{ rows[1] }}</td>
+                    <td style="width: 0px;background-color: white;border: none;"><a href="/check_vendors/{{ rows[0] }}"
+                               class="btn btn-outline-secondary">Check vendors</a></td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div><br><br><br><br>
+
+{% endblock body %}

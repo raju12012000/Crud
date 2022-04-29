@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    {% block head %}
+
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+              integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+              crossorigin="anonymous">
+
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/main.css') }}">
+
+        <script type=text/javascript src="{{ url_for('static', filename='JS/script.js') }}"></script>
+
+
+        {% if title %}
+            <title>CRUD - {{ title }}</title>
+        {% else %}
+            <title>CRUD</title>
+        {% endif %}
+
+
+
+
+    {% endblock head %}
+
+    <style>
+
+        {% block css %}
+
+        {% endblock css %}
+
+    </style>
+
+</head>
+<body>
+<header class="site-header">
+    <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+        <div class="container">
+            <a class="navbar-brand mr-4" href="/home">Suppliers</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle"
+                    aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarToggle">
+                <div class="navbar-nav mr-auto">
+                    <a class="nav-item nav-link" href="/home">Home</a>
+                    <a class="nav-item nav-link" href="/vendor">vendor</a>
+                    <a class="nav-item nav-link" href="/parts">parts</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<main role="main" class="container">
+    <div class="row">
+        <div class="col-md-10">
+            {% block body %}{% endblock body %}
+        </div>
+    </div>
+</main>
+
+
+</body>
+</html>
